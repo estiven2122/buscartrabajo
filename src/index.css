@@ -1,13 +1,84 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 39 39 42;
+    --foreground: 250 250 249;
+    --card: 39 39 42;
+    --card-foreground: 250 250 249;
+    --popover: 39 39 42;
+    --popover-foreground: 250 250 249;
+    --primary: 28 25 23;
+    --primary-foreground: 250 250 249;
+    --secondary: 68 64 60;
+    --secondary-foreground: 250 250 249;
+    --muted: 68 64 60;
+    --muted-foreground: 161 161 170;
+    --accent: 68 64 60;
+    --accent-foreground: 250 250 249;
+    --destructive: 239 68 68;
+    --destructive-foreground: 250 250 249;
+    --border: 68 64 60;
+    --input: 68 64 60;
+    --ring: 212 165 116;
+    --radius: 0.75rem;
+  }
+
+  .light {
+    --background: 250 248 243;
+    --foreground: 28 25 23;
+    --card: 255 255 255;
+    --card-foreground: 28 25 23;
+    --popover: 255 255 255;
+    --popover-foreground: 28 25 23;
+    --primary: 139 69 19;
+    --primary-foreground: 250 248 243;
+    --secondary: 244 240 230;
+    --secondary-foreground: 28 25 23;
+    --muted: 244 240 230;
+    --muted-foreground: 115 115 115;
+    --accent: 244 240 230;
+    --accent-foreground: 28 25 23;
+    --destructive: 239 68 68;
+    --destructive-foreground: 250 248 243;
+    --border: 232 220 199;
+    --input: 232 220 199;
+    --ring: 212 165 116;
+  }
+
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    @apply bg-white text-gray-900;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  /* Estilos personalizados del tema desierto */
+  .desert-gradient {
+    @apply bg-gradient-to-br from-desert-100 via-desert-200 to-desert-300;
+  }
+  
+  .oasis-gradient {
+    @apply bg-gradient-to-br from-oasis-100 via-oasis-200 to-oasis-300;
+  }
+  
+  .card-desert {
+    @apply bg-white/80 backdrop-blur-sm border border-desert-200 shadow-desert rounded-lg;
+  }
+  
+  .btn-desert {
+    @apply bg-desert-400 hover:bg-desert-500 text-white font-medium px-4 py-2 rounded-lg transition-colors duration-200 shadow-desert;
+  }
+  
+  .btn-oasis {
+    @apply bg-oasis-500 hover:bg-oasis-600 text-white font-medium px-4 py-2 rounded-lg transition-colors duration-200 shadow-oasis;
+  }
 }
